@@ -1,0 +1,5 @@
+# Build image from docker file
+docker build -t <image_name> <path_to_dockerfile>
+
+# Build image from github repo
+docker build -t <image_name> \ git@github.com:<github_repo>
