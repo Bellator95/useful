@@ -1,0 +1,22 @@
+$ nmcli dev show | grep 'IP4.DNS'
+IP4.DNS[1]:              10.0.0.2
+IP4.DNS[2]:              10.0.0.3
+
+Using these addresses, create a file /etc/docker/daemon.json:
+
+$ sudo su root
+# cd /etc/docker
+# touch daemon.json
+Put this in /etc/docker/daemon.json:
+
+{                                                                          
+    "dns":["10.0.0.2","10.0.0.3"]                                                                           
+}     
+Exit from root:
+
+# exit
+Now restart docker:
+
+$ sudo service docker restart
+
+
